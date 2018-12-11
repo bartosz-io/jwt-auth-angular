@@ -1,0 +1,17 @@
+button {
+  right: 10px;
+  position: absolute;
+}
+
+p {
+  font-size: 30px;
+  top: 40%;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.number {
+  font-weight: bold;
+  color: darkblue;
+}

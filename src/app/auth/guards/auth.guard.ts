@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate() {
     if (this.authService.isLoggedIn()) {
-      this.router.navigate(['/random']);
+      this.router.navigate(['/secret-random-number']);
     }
     return !this.authService.isLoggedIn();
   }

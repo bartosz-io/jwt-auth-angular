@@ -12,7 +12,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'random',
+    path: 'secret-random-number',
     loadChildren: './random/random.module#RandomModule',
     canActivate: [RandomGuard],
     canLoad: [RandomGuard]

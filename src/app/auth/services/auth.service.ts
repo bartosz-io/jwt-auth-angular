@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { of, Observable } from 'rxjs';
 import { catchError, mapTo, tap } from 'rxjs/operators';
 import { config } from './../../config';
+import { Tokens } from '../models/tokens';
 
 @Injectable({
   providedIn: 'root'
@@ -54,9 +55,9 @@ export class AuthService {
     return localStorage.getItem(this.JWT_TOKEN);
   }
 
-  private doLoginUser(username: string, token: any) {
+  private doLoginUser(username: string, tokens: Tokens) {
     this.loggedUser = username;
-    this.storeTokens(token);
+    this.storeTokens(tokens);
   }
 
   private doLogoutUser() {
@@ -72,9 +73,9 @@ export class AuthService {
     localStorage.setItem(this.JWT_TOKEN, jwt);
   }
 
-  private storeTokens(token: any) {
-    localStorage.setItem(this.JWT_TOKEN, token.jwt);
-    localStorage.setItem(this.REFRESH_TOKEN, token.refreshToken);
+  private storeTokens(tokens: Tokens) {
+    localStorage.setItem(this.JWT_TOKEN, tokens.jwt);
+    localStorage.setItem(this.REFRESH_TOKEN, tokens.refreshToken);
   }
 
   private clearTokens() {

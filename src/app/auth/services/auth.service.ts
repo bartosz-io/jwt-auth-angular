@@ -62,7 +62,7 @@ export class AuthService {
 
   private doLogoutUser() {
     this.loggedUser = null;
-    this.clearTokens();
+    this.removeTokens();
   }
 
   private getRefreshToken() {
@@ -78,7 +78,7 @@ export class AuthService {
     localStorage.setItem(this.REFRESH_TOKEN, tokens.refreshToken);
   }
 
-  private clearTokens() {
+  private removeTokens() {
     localStorage.removeItem(this.JWT_TOKEN);
     localStorage.removeItem(this.REFRESH_TOKEN);
   }

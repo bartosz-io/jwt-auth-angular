@@ -34,7 +34,7 @@ export class AuthService {
       tap(() => this.doLogoutUser()),
       mapTo(true),
       catchError(error => {
-        alert(error.error.reason);
+        alert(error.error);
         return of(false);
       }));
   }
